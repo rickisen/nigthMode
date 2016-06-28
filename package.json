@@ -1,0 +1,40 @@
+{
+  "name": "nightmode",
+  "private": false,
+  "version": "1.3.1",
+  "license": "GPL-3.0",
+  "author": {
+    "name": "rickisen",
+    "email": "rickard.frilans@gmail.com"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rickisen/nightmode.git"
+  },
+
+  "engines": {
+    "node": ">= 5.0.x"
+  },
+
+  "devDependencies": {
+    "babel-preset-es2015": "6.3.x",
+    "babelify": "7.2.x",
+    "eslint-tap": "1.1.x",
+    "grunt": "0.4.x",
+    "grunt-babel": "6.0.x",
+    "grunt-bake": "1.3.x",
+    "grunt-browserify": "4.0.x",
+    "grunt-contrib-clean": "0.7.x",
+    "grunt-contrib-watch": "0.6.x",
+    "grunt-eslint": "17.3.x",
+    "grunt-newer": "1.1.x",
+    "grunt-notify": "0.4.x",
+    "load-grunt-tasks": "3.4.x",
+    "time-grunt": "1.3.x"
+  },
+
+  "scripts": {
+    "build": "grunt build"
+  }
+}

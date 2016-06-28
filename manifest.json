@@ -1,0 +1,24 @@
+{ 
+  "manifest_version": 2,
+  "name": "nightmode",
+  "version": "1.0",
+ 
+  "description": "Inverts the lightness of all elements on a page",
+  "icons": {
+    "48": "icons/icon.png"
+  },
+
+  "applications": {
+    "gecko": {
+      "id": "nightmode@rickisen.se",
+      "strict_min_version": "45.0"
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["build/nightmode.js"]
+    }
+  ]
+}
