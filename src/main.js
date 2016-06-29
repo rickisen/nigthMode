@@ -1,3 +1,14 @@
-import varrie from './dir/variable';
+import ComputedStyleStrat from './Strategies/ComputedStyleStrat';
 
-console.log(varrie);
+init();
+
+function init() {
+  document.addEventListener('keyup', function(e) {
+    switch (e.keyCode) {
+      case 78: // n-key
+        var strat = new ComputedStyleStrat();
+        strat.applyEffect();
+        break;
+    }
+  });
+}
