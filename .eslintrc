@@ -29,7 +29,6 @@
     "jsx": true
   },
   "rules": {
-    "eqeqeq": 2,
     "strict": 0,
     "no-empty": 1,
     "no-alert": 2,
