@@ -5,13 +5,13 @@ export default class ComputedStyleStrat {
   constructor() {
     this.cssPropsToChange = [
       'color',
-      'backgroundColor',
-      'borderColor',
-      'borderTopColor',
-      'borderRightColor',
-      'borderBottomColor',
-      'borderLeftColor',
-      'outlineColor'
+      'background-color',
+      'border-color',
+      'border-top-color',
+      'border-right-color',
+      'border-bottom-color',
+      'border-left-color',
+      'outline-color'
     ];
   }
 
@@ -29,7 +29,7 @@ export default class ComputedStyleStrat {
         // only change the color of it if has a color
         if (isRgbString(currentStyle[prop])) {
           let color = new Color(currentStyle[prop]);
-          element.style[prop] = color.invertLuma();
+          element.style.setProperty([prop], color.invertLuma(), 'important');
         }
       });
     }
