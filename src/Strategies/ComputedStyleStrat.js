@@ -1,4 +1,3 @@
-import { isRgbString } from '../Classes/RgbString';
 import Color         from '../Classes/Color';
 
 export default class ComputedStyleStrat {

@@ -1,13 +1,20 @@
+import { isRgbString } from '../Classes/RgbString';
 import * as ColorConverter from '../Tools/ColorConverter';
 
 export default class Color {
   constructor(colorString) {
-    // extract the rgb values
-    // for now assume every colorString is in the form of 'rgb(40, 40, 40)'
-    var colorSplit = colorString.split(',');
-    this.r = 0 + parseInt(colorSplit[0].substr(4).trim());
-    this.g = 0 + parseInt(colorSplit[1].trim());
-    this.b = 0 + parseInt(colorSplit[2].replace(')', ' ').trim());
+
+    if (!isRgbString(colorString)) {
+      let colorArr = ColorConverter.hexToRgb(colorString);
+      this.r = colorArr[0];
+      this.g = colorArr[1];
+      this.b = colorArr[2];
+    } else {
+      var colorSplit = colorString.split(',');
+      this.r = 0 + parseInt(colorSplit[0].substr(4).trim());
+      this.g = 0 + parseInt(colorSplit[1].trim());
+      this.b = 0 + parseInt(colorSplit[2].replace(')', ' ').trim());
+    }
   }
 
   invertLuma() {

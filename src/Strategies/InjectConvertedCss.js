@@ -1,4 +1,3 @@
-import { isRgbString } from '../Classes/RgbString';
 import Color           from '../Classes/Color';
 import fetch           from 'isomorphic-fetch';
 
@@ -16,6 +15,7 @@ export default class InjectConvertedCss {
       }
     }
 
+    // TDOD: find a better solution than fetch
     stylesheetURIs.map((URI) => {
       fetch(URI).then((responce) => {
         responce.text().then((text) => (
@@ -27,10 +27,11 @@ export default class InjectConvertedCss {
 
   convertText() {
     this.convertedStylesheets = this.stylesheets.map((stylesheet) => (
-      stylesheet.replace(/#([a-f]|[A-F]|[0-9]){3}(([a-f]|[A-F]|[0-9]){3})?\b/g, 'pink')
+      stylesheet.replace(/#([a-f]|[A-F]|[0-9]){3}(([a-f]|[A-F]|[0-9]){3})?\b/g, (orig) => {
+        let color = new Color(orig);
+        return color.invertLuma();
+      })
     ));
-
-    console.log(this.convertedStylesheets);
   }
 
   applyEffect() {
