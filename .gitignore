@@ -57,3 +57,4 @@ dist/
 .tmp/
 
 build/
+.tern-config
